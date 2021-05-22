@@ -12,23 +12,23 @@ import java.io.IOException;
  * @author LinJn
  * @since 2021/5/21 19:05
  */
-public class HttpClient {
+public class MyHttpClient {
 
-    private final CloseableHttpClient hc;
+    private final CloseableHttpClient httpClient;
 
-    private HttpClient() {
-        hc = HttpClientBuilder.create().build();
+    private MyHttpClient() {
+        httpClient = HttpClientBuilder.create().build();
     }
 
     public String getAsString(String url) throws IOException {
         HttpGet httpGet = new HttpGet(url);
-        try (CloseableHttpResponse response = hc.execute(httpGet)) {
+        try (CloseableHttpResponse response = httpClient.execute(httpGet)) {
             return EntityUtils.toString(response.getEntity());
         }
     }
 
     public static void main(String[] args) throws IOException {
-        HttpClient httpClient = new HttpClient();
+        MyHttpClient httpClient = new MyHttpClient();
         String asString = httpClient.getAsString("http://localhost:8082");
         System.out.println(asString);
     }

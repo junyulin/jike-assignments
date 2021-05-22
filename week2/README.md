@@ -4,7 +4,7 @@
 
    
 
-2. 写一段代码，使用 HttpClient 或 OkHttp 访问 [ http://localhost:8801 ](http://localhost:8801/)，代码提交到 GitHub。
+2. 写一段代码，使用 MyHttpClient 或 OkHttp 访问 [ http://localhost:8801 ](http://localhost:8801/)，代码提交到 GitHub。
 
-   题解位于 `src\main\java` 下面的 `HttpClient`。
+   题解位于 `src\main\java` 下面的 `MyHttpClient`。
 
