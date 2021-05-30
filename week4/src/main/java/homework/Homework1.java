@@ -11,7 +11,7 @@ public class Homework1 {
 
     public static void main(String[] args) throws InterruptedException {
         long start=System.currentTimeMillis();
-        // 使用一个数组到线程中接住返回值，list 和 自定义对象 是同样的道理，这里不重复演示
+        // 使用一个数组到线程中接住返回值，使用 list 和 自定义对象 去接住是同样的道理，这里不重复演示
         int[] ret = new int[1];
         Runnable runnable = () -> ret[0] = sum();
         Thread thread = new Thread(runnable);
