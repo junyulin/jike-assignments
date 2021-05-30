@@ -14,7 +14,7 @@ public class RandomRouter implements Router {
 
     @Override
     public String route(List<String> server) {
-        Random random = new Random();
+        Random random = new Random(System.currentTimeMillis());
         int i = random.nextInt(server.size());
         return server.get(i);
     }
