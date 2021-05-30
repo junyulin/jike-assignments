@@ -1,7 +1,6 @@
 package homework;
 
 import java.util.Collections;
-import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -19,8 +18,7 @@ public class Homework4 {
         long start=System.currentTimeMillis();
         ExecutorService executorService = Executors.newFixedThreadPool(8);
         // 使用线程池的 invokeAny 方法
-        Callable<Integer> callable = Homework4::sum;
-        Integer result = executorService.invokeAny(Collections.singleton(callable));
+        Integer result = executorService.invokeAny(Collections.singleton(Homework4::sum));
         executorService.shutdown();
         System.out.println("异步计算结果为："+ result);
         System.out.println("使用时间："+ (System.currentTimeMillis()-start) + " ms");
