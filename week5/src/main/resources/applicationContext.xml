@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:linjn="http://www.linjn.cn/linjn"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                        http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+                        http://www.linjn.cn/linjn
+                        http://www.linjn.cn/linjn/linjn.xsd">
+
+    <bean id="student" class="homeword1.Student">
+        <property name="name" value="linjn" />
+        <property name="age" value="24" />
+    </bean>
+    <linjn:student id="student1" age="25" name="linjn" />
+</beans>
