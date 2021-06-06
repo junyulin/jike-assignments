@@ -9,7 +9,9 @@
    3. 使用注解 `@Configuration` 与 `@Bean`  进行注入。代码位于 src\main\java\homeword1\definition
    4. 使用自定义标签的方式。主要代码位于 `src\main\java\homeword1\definition` 文件夹下。
 
-2. 必做作业2：给前面课程提供的 Student/Klass/School 实现自动配置和 Starter。
+2. **必做作业2：给前面课程提供的 Student/Klass/School 实现自动配置和 Starter。**
+
+   作业位于 `src\main\java\homeword2` 文件夹下，自动配置的类是这个文件夹下面的 `SchoolAutoConfiguration` 类。
 
 3. **研究一下 JDBC 接口和数据库连接池，掌握它们的设计和用法**：
    **1）使用 JDBC 原生接口，实现数据库的增删改查操作**。

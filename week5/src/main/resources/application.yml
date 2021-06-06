@@ -1,0 +1,7 @@
+student:
+  id: 11
+  name: student1
+  beanName: beanStudent1
+
+linjn:
+  school: true

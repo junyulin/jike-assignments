@@ -33,6 +33,7 @@ public class Homeword2 {
                 preparedStatement.addBatch();
             }
             preparedStatement.executeBatch();
+            // 事务提交
             connection.commit();
         } catch (Exception e) {
             e.printStackTrace();
