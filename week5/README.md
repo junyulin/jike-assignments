@@ -20,5 +20,6 @@
 
    ​	作业位于 `src\main\java\homeword3` 文件下 `Homeword2` 类。
 
-   3）配置 Hikari 连接池，改进上述操作。提交代码到 GitHub。
+   **3）配置 Hikari 连接池，改进上述操作。提交代码到 GitHub。**
 
+   ​	作业位于 `src\main\java\homeword3` 文件下 `Homeword3` 类。
