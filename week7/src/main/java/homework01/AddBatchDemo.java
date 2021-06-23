@@ -36,8 +36,8 @@ public class AddBatchDemo {
 
     public static void main(String[] args) throws Exception {
         long bg = System.currentTimeMillis();
-        // test1();
-        test2();
+         test1();
+//        test2();
         long end = System.currentTimeMillis();
         System.out.println((end - bg) + " ms");
     }
