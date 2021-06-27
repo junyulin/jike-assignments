@@ -51,4 +51,11 @@ public class CurdDemo implements ApplicationRunner {
         return this.orderRepository.findById(616045350901755905L)
                 .orElseThrow(RuntimeException::new);
     }
+
+    public void update() {
+        Order order = get();
+        order.setPrice("65.42");
+        // 无法使用 save 进行更新
+        this.orderRepository.save(order);
+    }
 }

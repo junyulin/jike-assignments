@@ -33,4 +33,7 @@ public class Order {
 
     private String discountPrice;
 
+    // Date 类型的数据可以插入，但是查询报错
+    // private Date createTime;
+
 }
