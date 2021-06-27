@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3307/sharding_db?characterEncoding=utf8&serverTimezone=UTC&useSSL=false
+    # url: jdbc:mysql://localhost:3306/jike_sharding_0?characterEncoding=utf8&serverTimezone=UTC&useSSL=false
+    username: root
+    password: root
+
+  jpa:
+    show-sql: true
