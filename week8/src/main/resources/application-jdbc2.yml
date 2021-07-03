@@ -1,0 +1,40 @@
+spring:
+  shardingsphere:
+    datasource:
+      names: db0,db1
+      db0:
+        type: com.zaxxer.hikari.HikariDataSource
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        jdbc-url: jdbc:mysql://localhost:3306/db0
+        username: root
+        password: root
+      db1:
+        type: com.zaxxer.hikari.HikariDataSource
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        jdbc-url: jdbc:mysql://localhost:3306/db1
+        username: root
+        password: root
+    rules:
+      sharding:
+        tables:
+          order:
+            actual-data-nodes: db$->{0..1}.order$->{0..1}
+            database-strategy:
+              standard:
+                sharding-column: user_id
+                sharding-algorithm-name: a
+            table-strategy:
+              standard:
+                sharding-column: id
+                sharding-algorithm-name: b
+        sharding-algorithms:
+          a:
+            type: INLINE
+            props:
+              algorithm-expression: db$->{user_id % 2}
+          b:
+            type: INLINE
+            props:
+              algorithm-expression: order$->{id % 2}
+    props:
+      sql-show: true

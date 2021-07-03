@@ -1,0 +1,57 @@
+spring:
+  shardingsphere:
+    datasource:
+      # 配置数据源
+      names: jike0,jike1
+      # 配置第 1 个数据源
+      jike0:
+        type: com.zaxxer.hikari.HikariDataSource
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        jdbc-url: jdbc:mysql://localhost:3306/jike0
+        username: root
+        password: root
+      # 配置第 2 个数据源
+      jike1:
+        type: com.zaxxer.hikari.HikariDataSource
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        jdbc-url: jdbc:mysql://localhost:3306/jike1
+        username: root
+        password: root
+    rules:
+      sharding:
+        # 配置分片算法
+        sharding-algorithms:
+          database-inline:
+            type: INLINE
+            props:
+              algorithm-expression: jike$->{user_id % 2}
+          order-inline:
+            type: INLINE
+            props:
+              algorithm-expression: t_order$->{id % 4}
+        tables:
+          # t_user 的分片规则
+          t_order:
+            # 节点类型
+            actual-data-nodes: jike$->{0..1}.t_order$->{0..3}
+            # 分库策略
+            database-strategy:
+              standard:
+                sharding-column: user_id
+                sharding-algorithm-name: database-inline
+            # 分表策略
+            table-strategy:
+              standard:
+                sharding-column: id
+                sharding-algorithm-name: order-inline
+    props:
+      sql-show: true
+
+
+
+
+
+
+
+
+

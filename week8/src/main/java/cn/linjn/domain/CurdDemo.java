@@ -5,7 +5,6 @@ import cn.linjn.repository.OrderRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
-import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +15,7 @@ import java.util.List;
  * @author LinJn
  * @since 2021/6/27 21:19
  */
-@Component
+//@Component
 @RequiredArgsConstructor
 public class CurdDemo implements ApplicationRunner {
 
